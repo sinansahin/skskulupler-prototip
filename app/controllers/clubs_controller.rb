@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
   before_action :set_club, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
 
   # GET /clubs
   # GET /clubs.json
