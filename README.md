@@ -1,1 +1,1 @@
-# Model için -> Model.md
+Model için -> Model.md
