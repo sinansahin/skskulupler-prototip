@@ -1,0 +1,7 @@
+body {
+background-image: url(bg.jpg);
+background-repeat: repeat;
+background-attachment: scroll;
+background-color: white;
+background-position: top-left;
+}
