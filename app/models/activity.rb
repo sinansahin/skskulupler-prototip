@@ -1,3 +1,3 @@
 class Activity < ActiveRecord::Base
-	belongs_to :Club
+	belongs_to :club
 end
