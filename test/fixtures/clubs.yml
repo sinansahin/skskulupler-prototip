@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  logo: MyString
+  supervisor: 1
+  regulation: MyText
+  description: MyText
+  email: MyString
+
+two:
+  name: MyString
+  logo: MyString
+  supervisor: 1
+  regulation: MyText
+  description: MyText
+  email: MyString
