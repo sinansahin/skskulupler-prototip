@@ -1,2 +1,1 @@
-# starteamproject
-Omu Uzem Star Team Project Repository
+# Model için -> Model.md
