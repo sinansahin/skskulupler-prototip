@@ -1,38 +1,11 @@
 <%= render "home/header" %>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Clubs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Logo</th>
-      <th>Supervisor</th>
-      <th>Regulation</th>
-      <th>Description</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @clubs.each do |club| %>
-      <tr>
-        <td><%= club.name %></td>
-        <td><%= club.logo %></td>
-        <td><%= club.supervisor %></td>
-        <td><%= club.regulation %></td>
-        <td><%= club.description %></td>
-        <td><%= club.email %></td>
-        <td><%= link_to 'Show', club %></td>
-        <td><%= link_to 'Edit', edit_club_path(club) %></td>
-        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="panel panel-default col-md-3">
+    <div class="panel-heading"><%= link_to club.name, club %></div>
+      <div class="panel-body">
+        <%= image_tag(club.logo, height: '120')%>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Club', new_club_path %>
