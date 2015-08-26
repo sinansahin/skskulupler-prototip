@@ -6,30 +6,34 @@
     <div class="col-md-3">
       <div class="panel panel-success">
         <div class="panel-body">
-          <%= image_tag(@club.logo, height: '120', align: 'center')%>
+          <center><%= image_tag(@club.logo, height: '120')%></center>
         </div>
       </div>
       <div class="panel panel-defult">
         <div class="panel-body">
-          Kulübe üye ol butonu.
+
+        <!-- Root Path Geçici -->
+
+          <center><%= link_to "Kulübe Üye Ol", root_path, class:"btn btn-default" %></center>       
         </div>
       </div>
-      <div class="panel panel-success">
+      <div class="panel panel-danger">
         <div class="panel-heading">
-          <h3 class="panel-title">Danışman</h3>
+          <h3 class="panel-title" style="text-align: center">Danışman</h3>
         </div>
-        <div class="panel-body">
+      <div class="panel-body">
           <div class="list-group">
           <a href="#" class="list-group-item">
-            <p class="list-group-item-text"></p>
-            <h4 class="list-group-item-heading" align="center"><%= User.find_by_id(@club.supervisor).first_name+" "+User.find_by_id(@club.supervisor).last_name %></h4>
+            <p class="list-group-item-text">TEst</p>
+            
           </a>
         </div>
         </div>
+
       </div>
-      <div class="panel panel-success">
+      <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title">Yönetim Kurulu</h3>
+          <h3 class="panel-title" style="text-align: center">Yönetim Kurulu</h3>
         </div>
         <div class="panel-body">
           <div class="list-group">
@@ -54,10 +58,10 @@
         </div>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Hakkımızda</h3>
+          <h3 class="panel-title" style="text-align: center">Hakkımızda</h3>
         </div>
         <div class="panel-body">
           <p><%= @club.description %></p>
@@ -65,27 +69,11 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Etkinlikler</h3>
-        </div>
-        <div class="panel-body">
-          <div class="list-group">
-          <% Activity.where(club_id: @club.id).each do |activity| %>
-            
-            <%= link_to activity.title, activity, class: "list-group-item" %><br />
-          <% end %>
-          
 
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
+        <div class="col-md-3">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Duyurular</h3>
+          <h3 class="panel-title" style="text-align: center">Duyurular</h3>
         </div>
         <div class="panel-body">
           <div class="list-group">
@@ -96,7 +84,24 @@
         </div>
         </div>
       </div>
-      
     </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align: center">Etkinlikler</h3>
+        </div>
+        <div class="panel-body">
+          <div class="list-group">
+          <% Activity.where(club_id: @club.id).each do |activity| %>
+            
+            <%= link_to activity.title, activity, class: "list-group-item" %><br />
+          <% end %>
+          
+        </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
