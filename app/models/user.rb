@@ -8,5 +8,9 @@ class User < ActiveRecord::Base
   #before_create :set_default_role
  # def set_default_role
   #  self.role = Role.last
-  #end     
+  #end  
+  def admin?
+  	(roles.find_by_name("Admin") != nil) ? true : false
+  end
+
 end
