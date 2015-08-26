@@ -31,6 +31,12 @@
 					 <% if user_signed_in? %>
 						 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name %><strong class="caret"></strong></a>
 						<ul class="dropdown-menu">
+							<% if current_user.admin? %>
+								<li>
+								<%= link_to "Yönetici Paneli", admin_clubs_path %>
+							</li>
+							<% end %>
+
 							<li>
 								<%= link_to "Hesabımı düzenle", edit_user_registration_path %>
 							</li>
