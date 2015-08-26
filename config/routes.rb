@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'club_role/new'
+
   root 'home#index'
   devise_for :users
   resources :notices
