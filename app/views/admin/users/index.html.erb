@@ -1,1 +1,24 @@
-sdadsadsad
+<p id="notice"><%= notice %></p>
+
+<% @users.each do |user| %>
+
+
+  <div class="row">
+    <div class="col-md-1">
+        <%= image_tag("omu.jpg", height: '30')%>
+    </div>
+    <div class="col-md-8" >
+        <%=user.first_name%>  <%=user.last_name%>  <%=user.email%>
+    </div>
+   
+        
+    <div class="col-md-3">
+        <%= link_to "Düzenle", edit_admin_user_path(user.id), class:"btn btn-default" %>
+    </div> 
+    </div>
+
+  
+
+<% end %>
+
+

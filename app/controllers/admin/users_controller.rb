@@ -2,6 +2,7 @@ class Admin::UsersController < ApplicationController
   layout 'admin'
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
+
   
   # GET /users
   # GET /users.json
@@ -33,7 +34,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_users_path, notice: 'Club was successfully created.' }
+        format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: admin_users_path }
       else
         format.html { render :new }
@@ -46,8 +47,8 @@ class Admin::UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(club_params)
-        format.html { redirect_to admin_users_path, notice: 'Club was successfully updated.' }
+      if @user.update(user_params)
+        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: admin_users_path }
       else
         format.html { render :edit }
@@ -61,16 +62,12 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_users_path, notice: 'Club was successfully destroyed.' }
+      format.html { redirect_to admin_users_path, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    #pundit eklenince eklencek
-    #def permission_denied
-     # redirect_to(request.referrer || root_path, alert: "Bu sayfayı görüntüleme yetkiniz bulunmamaktadır.")
-    #end    
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -78,7 +75,7 @@ class Admin::UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def club_params
-      params.require(:club).permit(:name, :logo, :supervisor, :regulation, :description, :email)
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :student_number, :email)
     end
 end

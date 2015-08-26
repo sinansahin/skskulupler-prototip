@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :activities
   resources :clubs , only: [:index, :show]
   get 'home/yonerge' => 'home#yonerge'
-  namespace :admin do
-  resources :clubs
-  resources :users
+  namespace :admin do 
+  resources :clubs , except: [:show]
+  resources :users , except: [:show]
   end
   
 end
