@@ -1,12 +1,29 @@
-<%= render "home/header" %>
+
 <p id="notice"><%= notice %></p>
 
-    <% @clubs.each do |club| %>
-    <div class="panel panel-default col-md-3">
-    
-      <div class="panel-body">
-        <%= image_tag(club.logo, height: '120')%>
-      </div>
-      <div class="panel-footer"><%= link_to club.name, club %></div>
+<% @clubs.each do |club| %>
+
+
+  <div class="row">
+    <div class="col-md-1">
+        <%= image_tag("omu.jpg", height: '30')%>
     </div>
-    <% end %>
+    <div class="col-md-8" >
+        <%=club.name%>
+    </div>
+   
+        
+    <div class="col-md-3">
+        <%= link_to "Düzenle", edit_admin_club_path(club.id), class:"btn btn-default" %>
+    </div> 
+    </div>
+
+  
+
+<% end %>
+
+
+<%=link_to "Klup ekle", new_admin_club_path, class:"btn btn-default"%>
+
+            
+

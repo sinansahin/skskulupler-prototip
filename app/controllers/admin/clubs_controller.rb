@@ -1,4 +1,5 @@
 class Admin::ClubsController < ApplicationController
+  layout 'admin'
   before_action :set_club, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
   
