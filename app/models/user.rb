@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_and_belongs_to_many :roles
   has_and_belongs_to_many :clubs 
-  before_create :set_default_role
-  def set_default_role
-    self.role = Role.last
-  end     
+  #before_create :set_default_role
+ # def set_default_role
+  #  self.role = Role.last
+  #end     
 end
