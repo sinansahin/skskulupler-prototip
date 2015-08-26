@@ -3,9 +3,10 @@
 
     <% @clubs.each do |club| %>
     <div class="panel panel-default col-md-3">
-    <div class="panel-heading"><%= link_to club.name, club %></div>
+    
       <div class="panel-body">
         <%= image_tag(club.logo, height: '120')%>
       </div>
+      <div class="panel-footer"><%= link_to club.name, club %></div>
     </div>
     <% end %>

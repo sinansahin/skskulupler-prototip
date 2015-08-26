@@ -1,9 +1,10 @@
 <%= render "header" %>
+<% if user_signed_in? %>
 <div class="row">
 	<div class="col-md-3">
 		<div class="panel panel-success">
 		  <div class="panel-heading">
-		    <h3 class="panel-title">Topluluklar</h3>
+		    <h3 class="panel-title">Topluluklarım</h3>
 		  </div>
 		  <div class="panel-body">
 		    <div class="list-group">
@@ -11,15 +12,6 @@
 			    <h4 class="list-group-item-heading">List group item heading</h4>
 			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
 			  </a>
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
-
 			</div>
 		  </div>
 		</div>
@@ -50,14 +42,6 @@
 			    <h4 class="list-group-item-heading">List group item heading</h4>
 			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
 			  </a>
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
 
 			</div>
 		  </div>
@@ -70,25 +54,76 @@
 		  </div>
 		  <div class="panel-body">
 		    <div class="list-group">
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
+		  </div>
+		  </div>
+		</div>
+		
+	</div>
+</div>
+<% else %>
+<div class="row">
+	<div class="col-md-3">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Topluluklar</h3>
+		  </div>
+		  <div class="panel-body">
+		    <div class="list-group">
+			  <% Club.all.each do |club| %>
+			  <div class="well">
+			  <%= link_to club.name, club %><br />
+			  </div>
+			  <% end %>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Etkinlikler</h3>
+		  </div>
+		  <div class="panel-body">
+		    <div class="list-group">
+			  <% Activity.all.each do |activity| %>
+            
+	            <%= link_to activity.title, activity, class: "list-group-item" %><br />
+	          <% end %>
 
+			</div>
+		  </div>
+		</div>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Haberler</h3>
+		  </div>
+		  <div class="panel-body">
+		    <div class="list-group">
+			  <% News.all.each do |news| %>
+            
+	            <%= link_to news.title, news, class: "list-group-item" %><br />
+	          <% end %>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Duyurular</h3>
+		  </div>
+		  <div class="panel-body">
+		    <div class="list-group">
+			  <% Notice.all.each do |notice| %>
+            
+	            <%= link_to notice.title, notice, class: "list-group-item" %><br />
+	          <% end %>
 			</div>
 		  </div>
 		</div>
 		
 	</div>
 </div>
-
+<% end %>
 
 

@@ -4,9 +4,14 @@
 
 <div class="row">
     <div class="col-md-3">
-    <div class="panel panel-success">
+      <div class="panel panel-success">
         <div class="panel-body">
-          <%= image_tag(@club.logo, height: '120')%>
+          <%= image_tag(@club.logo, height: '120', align: 'center')%>
+        </div>
+      </div>
+      <div class="panel panel-defult">
+        <div class="panel-body">
+          Kulübe üye ol butonu.
         </div>
       </div>
       <div class="panel panel-success">
@@ -67,18 +72,11 @@
         </div>
         <div class="panel-body">
           <div class="list-group">
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          </a>
+          <% Activity.where(club_id: @club.id).each do |activitiy| %>
+            
+            <%= link_to activity.title, notice, class: "list-group-item" %><br />
+          <% end %>
+          
 
         </div>
         </div>
@@ -91,19 +89,10 @@
         </div>
         <div class="panel-body">
           <div class="list-group">
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          </a>
-
+          <% Notice.where(club_id: @club.id).each do |notice| %>
+            
+            <%= link_to notice.title, notice, class: "list-group-item" %><br />
+          <% end %>
         </div>
         </div>
       </div>

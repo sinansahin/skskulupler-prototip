@@ -1,7 +1,7 @@
 class ClubsController < ApplicationController
   before_action :set_club, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
-
+  
   # GET /clubs
   # GET /clubs.json
   def index
@@ -11,6 +11,9 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+  end
+  
+  def users
   end
 
   # GET /clubs/new
