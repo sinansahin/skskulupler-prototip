@@ -1,19 +1,12 @@
+<%= render "home/header" %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Club:</strong>
-  <%= @notice.club_id %>
+  <h3 align="right"><%= Club.find_by_id(@notice.club_id).name %></h3>
 </p>
-
+<h2><%= @notice.title %></h2> 
 <p>
-  <strong>Title:</strong>
-  <%= @notice.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
   <%= @notice.content %>
 </p>
-
 <%= link_to 'Edit', edit_notice_path(@notice) %> |
 <%= link_to 'Back', notices_path %>

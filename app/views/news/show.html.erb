@@ -1,19 +1,8 @@
+<%= render "home/header" %>
 <p id="notice"><%= notice %></p>
+<h2><%= @news.title %></h2> 
 
 <p>
-  <strong>Title:</strong>
-  <%= @news.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
+  <%= image_tag(@news.image, align: 'center')%>
   <%= @news.content %>
 </p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @news.image %>
-</p>
-
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>

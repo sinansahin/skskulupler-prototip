@@ -1,39 +1,34 @@
+<%= render "home/header" %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Club:</strong>
-  <%= @activity.club_id %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @activity.title %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @activity.image %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @activity.description %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @activity.start_date %>
-</p>
-
-<p>
-  <strong>Finish date:</strong>
-  <%= @activity.finish_date %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @activity.address %>
-</p>
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>
+<p>
+  <h3 align="right"><%= Club.find_by_id(@activity.club_id).name %></h3>
+</p>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-success">
+      <div class="panel-body">
+        <h2><%= @activity.title %></h2> 
+        <p>
+          <%= image_tag(@activity.image, align: 'center')%><br />
+          <%= @activity.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+          <p>
+            <strong>Tarih:</strong>
+            <%= @activity.start_date %> - <%= @activity.finish_date %><br />
+            <strong>Adres:</strong>
+            <%= @activity.address %>
+          </p>
+
+      </div>
+    </div>
+  </div>   
+</div>

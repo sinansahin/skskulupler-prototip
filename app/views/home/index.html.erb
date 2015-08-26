@@ -38,11 +38,10 @@
 		  </div>
 		  <div class="panel-body">
 		    <div class="list-group">
-			  <a href="#" class="list-group-item">
-			    <h4 class="list-group-item-heading">List group item heading</h4>
-			    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			  </a>
-
+			  <% News.all.each do |news| %>
+            
+	            <%= link_to news.title, news, class: "list-group-item" %><br />
+	          <% end %>
 			</div>
 		  </div>
 		</div>
@@ -54,6 +53,7 @@
 		  </div>
 		  <div class="panel-body">
 		    <div class="list-group">
+		  
 		  </div>
 		  </div>
 		</div>
@@ -71,7 +71,7 @@
 		    <div class="list-group">
 			  <% Club.all.each do |club| %>
 			  <div class="well">
-			  <%= link_to club.name, club %><br />
+			  <h5><%= link_to club.name, club %></h5>
 			  </div>
 			  <% end %>
 			</div>
