@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do 
   resources :clubs , except: [:show]
   resources :users , except: [:show]
+  resources :notices
   end
   
 end

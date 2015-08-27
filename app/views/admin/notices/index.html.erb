@@ -1,0 +1,10 @@
+<% @notices.each do |notice| %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><h2><%= notice.title %></h2></div>
+    <div class="panel-body">
+      <%= notice.content %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to "Duyuru Ekle", new_admin_notice_path %>
