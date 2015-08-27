@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates :first_name, :last_name, :email, :password, :password_confirmation, presence: true
+  validates :first_name, :last_name, length: {in: 3..50}
   #before_create :set_default_role
   # def set_default_role
   #  self.role = Role.last
