@@ -1,12 +1,16 @@
+# encoding: utf-8
+
 class Admin::ClubsController < ApplicationController
   layout 'admin'
   before_action :set_club, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
-  
+  before_action :authenticate_user!
+  rescue_from Pundit::NotAuthorizedError, with: :permission_denied
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
   # GET /clubs
   # GET /clubs.json
   def index
     @clubs = Club.all
+    authorize @clubs
   end
 
   # GET /clubs/1
@@ -20,6 +24,7 @@ class Admin::ClubsController < ApplicationController
   # GET /clubs/new
   def new
     @club = Club.new
+    authorize @club
   end
 
   # GET /clubs/1/edit
@@ -30,7 +35,7 @@ class Admin::ClubsController < ApplicationController
   # POST /clubs.json
   def create
     @club = Club.new(club_params)
-
+    authorize @club
     respond_to do |format|
       if @club.save
         format.html { redirect_to admin_clubs_path, notice: 'Club was successfully created.' }
@@ -67,10 +72,10 @@ class Admin::ClubsController < ApplicationController
   end
 
   private
-    #pundit eklenince eklencek
-    #def permission_denied
-     # redirect_to(request.referrer || root_path, alert: "Bu sayfayı görüntüleme yetkiniz bulunmamaktadır.")
-    #end    
+
+    def permission_denied
+      redirect_to(request.referrer || root_path, alert: "Bu sayfayı görüntüleme yetkiniz bulunmamaktadır.")
+    end    
 
     # Use callbacks to share common setup or constraints between actions.
     def set_club
