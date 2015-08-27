@@ -50,6 +50,7 @@ class Admin::UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+  
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
@@ -84,6 +85,6 @@ class Admin::UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :student_number, :email, :role_ids => [])
+      params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :student_number, :email, :avatar, :role_ids => [])
     end
 end

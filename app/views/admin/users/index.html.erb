@@ -5,7 +5,9 @@
 
   <div class="row">
     <div class="col-md-1">
-        <%= image_tag("omu.jpg", height: '30')%>
+        <% if user.avatar %>
+            <%= image_tag user.avatar.url ,height: '25', width: '25' %>
+        <%end%>
     </div>
     <div class="col-md-8" >
         <%=user.first_name%>  <%=user.last_name%>  <%=user.email%>
