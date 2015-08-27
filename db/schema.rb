@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150827075329) do
+=======
+ActiveRecord::Schema.define(version: 20150827072501) do
+>>>>>>> c24931c29a08220895f634817ff8acd24d5096e6
 
   create_table "activities", force: :cascade do |t|
     t.integer  "club_id"
