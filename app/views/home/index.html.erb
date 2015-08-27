@@ -7,8 +7,13 @@
 		  <div class="panel-body">
 		    <div class="list-group">
 			  <% @Club.each do |club| %>
-			  
-			  <%= link_to club.name, club, class: "list-group-item" %>
+			  <div class="list-group-item">	
+				   <%= image_tag club.avatar.url ,height: '25', width: '25'%>
+				   &nbsp;
+				  <%= link_to club.name , club%>
+			  	
+			  </div>
+			 
 			  
 			  <% end %>
 			</div>
