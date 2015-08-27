@@ -1,0 +1,9 @@
+
+<%= render "home/header" %>
+<p id="notice"><%= notice %></p>
+<h2><%= @info.title %></h2> 
+
+<p>
+  <%= image_tag(@info.image, align: 'center') if @info.image.present? %><br />
+  <%= @info.content %>
+</p>

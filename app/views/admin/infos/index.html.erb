@@ -1,0 +1,27 @@
+
+<p id="notice"><%= notice %></p>
+
+<% @infos.each do |info| %>
+
+
+  <div class="row">
+    <div class="col-md-8" >
+        <h2><%= info.title %></h2><br />
+        <p><%= info.content %></p>
+    </div>
+   
+        
+    <div class="col-md-3">
+        <%= link_to "Düzenle", edit_admin_info_path(info.id), class:"btn btn-default" %>
+    </div> 
+    </div>
+
+  
+
+<% end %>
+
+
+<%=link_to "Haber ekle", new_admin_info_path, class:"btn btn-default"%>
+
+            
+

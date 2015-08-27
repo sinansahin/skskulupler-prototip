@@ -1,6 +1,6 @@
-class CreateNews < ActiveRecord::Migration
+class CreateInfos < ActiveRecord::Migration
   def change
-    create_table :news do |t|
+    create_table :infos do |t|
       t.string :title
       t.text :content
       t.string :image

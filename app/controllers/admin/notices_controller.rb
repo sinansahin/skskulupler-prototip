@@ -75,6 +75,7 @@ class Admin::NoticesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_notice
       @notice = Notice.find(params[:id])
+      authorize @notice
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

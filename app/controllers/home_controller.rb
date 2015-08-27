@@ -9,6 +9,6 @@ class HomeController < ApplicationController
   	@Activities = Activity.all
   	@Notice = Notice.all
   	###
-  	@News = News.all
+  	@infos = Info.all
   end
 end

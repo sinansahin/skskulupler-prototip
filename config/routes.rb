@@ -4,14 +4,15 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :users
   resources :notices, only: [:show]
-  resources :news
+  resources :infos
   resources :activities
   resources :clubs , only: [:index, :show]
   get 'home/yonerge' => 'home#yonerge'
   namespace :admin do 
-  resources :clubs , except: [:show]
-  resources :users , except: [:show]
-  resources :notices
+    resources :clubs , except: [:show]
+    resources :users , except: [:show]
+    resources :notices
+    resources :infos
   end
   
 end

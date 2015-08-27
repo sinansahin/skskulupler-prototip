@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ClubPolicy < ApplicationPolicy
+class InfoPolicy < ApplicationPolicy
   def index?
     user.admin?
   end
