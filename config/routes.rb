@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   devise_for :users
-  resources :notices
+  resources :notices, only: [:show]
   resources :news
   resources :activities
   resources :clubs , only: [:index, :show]
