@@ -1,3 +1,5 @@
+
+
 body {
 background-image: url(bg.jpg);
 background-repeat: repeat;
@@ -29,5 +31,21 @@ background-position: top-left;
 }
 .image{
 	border-radius: 20px;
+
+}
+.icon{
+	border-radius: 7px;
+}
+
+
+#club{
+		text-decoration: none !important;
+		font-size: 15px;
+
+}
+#club :hover{
+		text-decoration: none !important;
+		background-color: white !important;
+		color: black !important;
 
 }
