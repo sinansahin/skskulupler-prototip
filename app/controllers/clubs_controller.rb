@@ -10,6 +10,14 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+    @club_roles = ClubRole.new
+    if user_signed_in?
+    
+      #user = User.find_by_id(current_user.id)
+
+      @uyemi = ClubRole.where(user_id: current_user.id).present?
+
+    end
   end
 
   # Use callbacks to share common setup or constraints between actions.

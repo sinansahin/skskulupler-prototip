@@ -9,6 +9,8 @@ Role.delete_all
 Role.create(name: 'Admin')
 Role.create(name: 'Student')
 
+
+
 User.delete_all
 User.create(first_name: 'Cevdet',last_name: 'akaydin',password: 'cevdet1993',email: 'cevdetakaydin@gmail.com')
 User.create(first_name: 'Emrullah',last_name: 'Sağlam',password: '12345678',email: 'emrullah.saglam@bil.omu.edu.tr')

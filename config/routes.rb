@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'club_role/new'
+
 
   root 'home#index'
   devise_for :users
   resources :notices, only: [:show]
   resources :infos
+  resources :club_roles
   resources :activities
   resources :clubs , only: [:index, :show]
   get 'home/yonerge' => 'home#yonerge'

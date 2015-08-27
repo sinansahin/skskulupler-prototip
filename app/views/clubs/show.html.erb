@@ -13,7 +13,7 @@
 
         <!-- Root Path Geçici -->
 
-          <center><%= link_to "Kulübe Üye Ol", root_path, class:"btn btn-default" %></center>       
+          <%= button_to "Kulübe Üye Ol", club_roles_path(club_id: @club.id),  method: :post, class: "btn btn-primary" if user_signed_in? and not @uyemi %>
         </div>
       </div>
       <div class="panel panel-danger">
