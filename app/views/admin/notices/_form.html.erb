@@ -1,0 +1,25 @@
+<%= simple_form_for([:admin, @notice]) do |f| %>
+  <% if @notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@notice.errors.count, "error") %> prohibited this club from being saved:</h2>
+
+      <ul>
+      <% @notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :title %>
+  </div>
+    <div class="field">
+    <%= f.input :content %>
+     </div>
+  <div class="field">
+    <%= f.input :club_id, collection: Club.all, label: 'Ülke Seçiniz' %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
