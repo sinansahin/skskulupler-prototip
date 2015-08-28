@@ -12,19 +12,20 @@ Günümüzde herkesin kullandığı mobil cihazlar (akıllı telefonlar, tabletl
 
 #Proje: SksKulupler
 
-#Açiklama
+##Açiklama
 
   19 Mayis üniversitesi için Uzem kamp tarafindan oluşturulmuş bir Website projesidir.Bütün kluplerin birarada olduğu ,haberlerin , etkinliklerin, ve duyurularin bulunduğu bir ortamdir.
+    Öğrenciler istedikleri kluplere üye olabilecekler.Birden çok klübe üye olmak mümkün.Üye olduklari klüplerle ilgili haberleri duyurulari ayrintili bir şekilde görebilecekler.Kendi klüplerinin listesini görebilirler.
   
-#Teknik Bilgi
+##Teknik Bilgi
 Ana temel olarak Ruby on Rails kullanilmiş olup yaninda;
 HTML,CSS,JAVASCRIPT, ve çeşitli Rails gemleri;
 Devise,Paperclip ve pundit gibi elementler kullanilip oluşturulmuştur.
   
-#Genel Kurulum Bilgisi
+##Genel Kurulum Bilgisi
   Ruby kurulumu, Rails kurulumu ve gemfile daki gemlerin kurulumu gereklidir.
 
-#Detayli Kurulum Bilgisi
+##Detayli Kurulum Bilgisi
     
   Ruby Bağımlılıkları
 
