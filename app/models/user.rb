@@ -15,10 +15,10 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :email, presence: true
   validates :password, presence: true, on: :create
   validates :first_name, :last_name, length: {in: 3..50}
-  #before_create :set_default_role
-  # def set_default_role
-  #  self.role = Role.last
-  #end  
+  after_create :set_default_role
+   def set_default_role
+    self.roles << Role.where(:name => "Student")
+  end  
   def admin?
     (roles.find_by_name("Admin") != nil) ? true : false
   end
