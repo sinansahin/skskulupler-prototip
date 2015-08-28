@@ -52,14 +52,18 @@ Kurulumun başarılı olup olmadığını kontrol edin.
 $ rails -v
 
 Başarılı olduysa şöyle bir çıktı verecektir.
+
 Rails 4.2.3
 
 Bundan sonra proje dizimine gelinir.
+
 $cd skskulupler
 
 Gemlerin kurulumu için bundle yapilmalidir.
+
 $bundle install
 
 daha sonra server çaliştirilir.
+
 $rails s
 
