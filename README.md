@@ -11,3 +11,23 @@ UZEM Akademi Yazılım Kampı'nın bu yıl ikincisini düzenledik. Bu kampı eğ
 Günümüzde herkesin kullandığı mobil cihazlar (akıllı telefonlar, tabletler, akıllı bileklikler, akıllı saatler vs) için özel olarak geliştirilen uygulamalara "Mobil Uygulama" denilmektedir. Bizler mobil uygulamayı açık kaynak kodlu yazılım felsefesi ile harmanlayarak MobilAçık isimli bir düşünce ortaya koyduk.
 
 #Proje: SksKulupler
+
+#Açiklama
+
+  19 Mayis üniversitesi için Uzem kamp tarafindan oluşturulmuş bir Website projesidir.Bütün kluplerin birarada olduğu ,haberlerin , etkinliklerin, ve duyurularin bulunduğu bir ortamdir.
+  
+#Teknik Bilgi
+Ana temel olarak Ruby on Rails kullanilmiş olup yaninda;
+HTML,CSS,JAVASCRIPT, ve çeşitli Rails gemleri;
+Devise,Paperclip ve pundit gibi elementler kullanilip oluşturulmuştur.
+
+#Özellikler
+  Eklenecek
+  
+#Genel Kurulum Bilgisi
+  Ruby kurulumu, Rails kurulumu ve gemfile daki gemlerin kurulumu gereklidir.
+
+#Detayli Kurulum Bilgisi
+    
+  
+
