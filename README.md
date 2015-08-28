@@ -54,10 +54,12 @@ $ rails -v
 Başarılı olduysa şöyle bir çıktı verecektir.
 Rails 4.2.3
 
-Bundan sonra proje dizimine gelinip;
+Bundan sonra proje dizimine gelinir.
 $cd skskulupler
-Gemlerin kurulumu için bundle yapilmalidir
+
+Gemlerin kurulumu için bundle yapilmalidir.
 $bundle install
-daha sonra server çaliştirilir
+
+daha sonra server çaliştirilir.
 $rails s
 
