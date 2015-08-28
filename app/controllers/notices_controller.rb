@@ -1,3 +1,4 @@
+# encoding: utf-8
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]

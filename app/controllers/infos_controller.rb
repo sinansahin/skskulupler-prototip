@@ -1,3 +1,4 @@
+# encoding: utf-8
 class InfosController < ApplicationController
   before_action :set_info, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]

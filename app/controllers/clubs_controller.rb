@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ClubsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
   before_action :set_club, only: [:show]
