@@ -25,7 +25,7 @@
       <div class="panel-body">
           <div class="list-group">
           <a href="#" class="list-group-item">
-            <p class="list-group-item-text">TEst</p>
+            <p class="list-group-item-text"><%= User.find_by_id(@club.supervisor).first_name+' '+User.find_by_id(@club.supervisor).last_name %></p>
             
           </a>
         </div>
@@ -39,22 +39,21 @@
         <div class="panel-body">
           <div class="list-group">
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <h4 class="list-group-item-heading"><%= User.find_by_id(@Baskan_id).first_name+' '+User.find_by_id(@Baskan_id).last_name if @Baskan_id %></h4>
+            <p class="list-group-item-text">Başkan</p>
           </a>
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <h4 class="list-group-item-heading"><%= User.find_by_id(@BaskanYrd_id).first_name+' '+User.find_by_id(@BaskanYrd_id).last_name if @BaskanYrd_id %></h4>
+            <p class="list-group-item-text">Başkan Yardımcısı</p>
           </a>
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <h4 class="list-group-item-heading"><%= User.find_by_id(@Yazman_id).first_name+' '+User.find_by_id(@Yazman_id).last_name if @Yazman_id %></h4>
+            <p class="list-group-item-text">Yazman</p>
           </a>
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">List group item heading</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          </a>
-
+            <h4 class="list-group-item-heading"><%= User.find_by_id(@Sayman_id).first_name+' '+User.find_by_id(@Sayman_id).last_name if @Sayman_id %></h4>
+            <p class="list-group-item-text">Sayman</p>
+          </a>          
         </div>
         </div>
       </div>
