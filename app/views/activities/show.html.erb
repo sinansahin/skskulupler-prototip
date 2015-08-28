@@ -12,7 +12,7 @@
       <div class="panel-body">
         <h2><%= @activity.title %></h2> 
         <p>
-          <%= image_tag(@activity.image, align: 'center')%><br />
+           <%= image_tag @activity.avatar.url  %></br></br>
           <%= @activity.description %>
         </p>
       </div>

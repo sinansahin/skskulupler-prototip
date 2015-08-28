@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :users , except: [:show]
     resources :notices
     resources :infos
+    resources :activities
   end
   
 end

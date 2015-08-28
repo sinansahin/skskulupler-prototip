@@ -1,4 +1,6 @@
-class ActivitiesController < ApplicationController
+# encoding: utf-8
+class Admin::ActivitiesController < ApplicationController
+  layout 'admin'
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
 

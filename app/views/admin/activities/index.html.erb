@@ -1,0 +1,29 @@
+
+<p id="notice"><%= notice %></p>
+
+<% @activities.each do |activity| %>
+
+
+  <div class="row">
+    <div class="col-md-1">
+        <%= image_tag activity.avatar.url ,height: '25', width: '25' %>
+    </div>
+    <div class="col-md-8" >
+        <%= activity.title %>
+    </div>
+   
+        
+    <div class="col-md-3">
+        <%= link_to "Düzenle", edit_admin_activity_path(activity.id), class:"btn btn-default" %>
+    </div> 
+    </div>
+
+  
+
+<% end %>
+
+
+<%=link_to "Etkinlik ekle", new_admin_activity_path, class:"btn btn-default"%>
+
+            
+

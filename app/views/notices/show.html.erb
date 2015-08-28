@@ -2,10 +2,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h3 align="right"><%= Club.find_by_id(@notice.club_id).name %></h3>
+  <h3 align="right"><%= Club.find_by_id(@notice.club_id).name %></h3></br>
 </p>
 <h2><%= @notice.title %></h2> 
 <%= image_tag @notice.avatar.url %>
+</br></br>
 <p>
   <%= @notice.content %>
 </p>
