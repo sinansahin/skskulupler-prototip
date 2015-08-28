@@ -28,8 +28,13 @@
 	  <div class="panel-body">
 	    <div class="list-group">
 		  <% @Activities.each do |activity| %>
-    
-            <%= link_to activity.title, activity, class: "list-group-item" %>
+    		<div class="list-group-item">
+    		<%= link_to activity.title, activity %>
+            <span style="float:right;"><%= activity.start_date.to_s%></span>
+
+
+    		</div>
+
           <% end %>
 
 		</div>
