@@ -29,5 +29,35 @@ Devise,Paperclip ve pundit gibi elementler kullanilip oluşturulmuştur.
 
 #Detayli Kurulum Bilgisi
     
-  
+  Ruby Bağımlılıkları
+
+$ sudo apt-get update
+$ sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+
+Ruby Kurulumu
+
+$ sudo apt-get install ruby1.9.1-full
+
+Kurulumun başarılı olup olmadığını kontrol edin.
+$ ruby -v
+
+Başarılı olduysa şöyle bir çıktı verecektir.
+ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
+
+Rails Kurulumu
+
+$ sudo gem install rails
+
+Kurulumun başarılı olup olmadığını kontrol edin.
+$ rails -v
+
+Başarılı olduysa şöyle bir çıktı verecektir.
+Rails 4.2.3
+
+Bundan sonra proje dizimine gelinip;
+$cd skskulupler
+Gemlerin kurulumu için bundle yapilmalidir
+$bundle install
+daha sonra server çaliştirilir
+$rails s
 
