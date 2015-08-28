@@ -3,6 +3,7 @@
     <div class="panel-heading"><h2><%= notice.title %></h2></div>
     <div class="panel-body">
       <%= notice.content %><br />
+      <%= image_tag notice.avatar.url ,height: '25', width: '25' %>
       <%= link_to "Düzenle", edit_admin_notice_path(notice.id), class:"btn btn-default" %>
     </div>
   </div>

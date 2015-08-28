@@ -4,6 +4,6 @@
 <h2><%= @info.title %></h2> 
 
 <p>
-  <%= image_tag(@info.image, align: 'center') if @info.image.present? %><br />
+  <%= image_tag @info.avatar.url  %>
   <%= @info.content %>
 </p>

@@ -85,6 +85,6 @@ class Admin::InfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_params
-      params.require(:info).permit(:title, :content, :image)
+      params.require(:info).permit(:title, :content, :image, :avatar)
     end
 end

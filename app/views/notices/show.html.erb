@@ -5,6 +5,7 @@
   <h3 align="right"><%= Club.find_by_id(@notice.club_id).name %></h3>
 </p>
 <h2><%= @notice.title %></h2> 
+<%= image_tag @notice.avatar.url %>
 <p>
   <%= @notice.content %>
 </p>

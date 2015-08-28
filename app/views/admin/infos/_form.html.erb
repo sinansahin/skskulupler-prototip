@@ -17,9 +17,11 @@
     <div class="field">
     <%= f.input :content %>
      </div>
-      <div class="field">
-    <%= f.input :image %>
-     </div>
+    <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+    
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

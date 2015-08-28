@@ -81,6 +81,6 @@ class Admin::NoticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notice_params
-      params.require(:notice).permit(:title, :content, :club_id)
+      params.require(:notice).permit(:title, :content, :club_id, :avatar)
     end
 end
