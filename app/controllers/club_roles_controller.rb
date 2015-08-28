@@ -5,8 +5,7 @@ class ClubRolesController < ApplicationController
   	
     @club_role = ClubRole.new(club_role_params)
     @club_role.user_id = current_user.id
-    @club_role.role_id = Role.last.id
-
+    @club_role.role_id = Role.find_by_name('Topluluk Üyesi').id
     respond_to do |format|
       if @club_role.save
         format.html { redirect_to club_path(@club_role.club_id), notice: 'Topluluğa üye oldunuz.' }

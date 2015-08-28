@@ -12,12 +12,15 @@ class ClubsController < ApplicationController
   def show
     @club_roles = ClubRole.new
     if user_signed_in?
-    
       #user = User.find_by_id(current_user.id)
-
-      @uyemi = ClubRole.where(user_id: current_user.id).present?
-
+      
+      @uyemi = ClubRole.where("user_id = ? AND club_id = ?", current_user.id, @club.id).present?
     end
+    
+    @TumUyeler = @club.club_roles
+    
+  
+
   end
 
   # Use callbacks to share common setup or constraints between actions.

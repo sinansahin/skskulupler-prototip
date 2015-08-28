@@ -8,8 +8,12 @@
 Role.delete_all
 Role.create(name: 'Admin')
 Role.create(name: 'Student')
-
-
+Role.create(name: 'Başkan')
+Role.create(name: 'Başkan Yardımcısı')
+Role.create(name: 'Sayman')
+Role.create(name: 'Yazman')
+Role.create(name: 'Yönetim Kurulu Üyesi')
+Role.create(name: 'Topluluk Üyesi')
 
 User.delete_all
 User.create(first_name: 'Cevdet',last_name: 'akaydin',password: 'cevdet1993',email: 'cevdetakaydin@gmail.com')
