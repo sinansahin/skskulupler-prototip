@@ -20,9 +20,6 @@ Günümüzde herkesin kullandığı mobil cihazlar (akıllı telefonlar, tabletl
 Ana temel olarak Ruby on Rails kullanilmiş olup yaninda;
 HTML,CSS,JAVASCRIPT, ve çeşitli Rails gemleri;
 Devise,Paperclip ve pundit gibi elementler kullanilip oluşturulmuştur.
-
-#Özellikler
-  Eklenecek
   
 #Genel Kurulum Bilgisi
   Ruby kurulumu, Rails kurulumu ve gemfile daki gemlerin kurulumu gereklidir.
