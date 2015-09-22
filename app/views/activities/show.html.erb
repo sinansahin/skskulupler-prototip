@@ -1,34 +1,34 @@
 <%= render "home/header" %>
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
-<p>
-  <h3 align="right"><%= Club.find_by_id(@activity.club_id).name %></h3>
-</p>
 <div class="row">
-  <div class="col-md-9">
-    <div class="panel panel-success">
-      <div class="panel-body">
-        <h2><%= @activity.title %></h2> 
-        <p>
-           <%= image_tag @activity.avatar.url  %></br></br>
-          <%= @activity.description %>
-        </p>
-      </div>
-    </div>
-  </div>
   <div class="col-md-3">
-    <div class="panel panel-primary">
-      <div class="panel-body">
+    <p id="notice"><%= notice %></p>
+    <!-- Profile Image -->
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <%= image_tag @club.avatar.url ,height: '125', width: '125', class:"profile-user-img img-responsive img-circle" %>
+        <h3 class="profile-username text-center"><%= @club.name%></h3>
+        <p class="text-muted text-center">  </p>
+      </div><!-- /.box-body -->
+    </div><!-- /.box -->
+    <div class="box box-primary">
+      <div class="box-body">
           <p>
             <strong>Tarih:</strong>
             <%= @activity.start_date %> - <%= @activity.finish_date %><br />
             <strong>Adres:</strong>
             <%= @activity.address %>
           </p>
-
       </div>
-    </div>
   </div>   
+  </div><!-- /.col -->
+  <div class="col-md-7">
+    <h2><%= @activity.title %></h2> 
+        <p>
+           <%= image_tag @activity.avatar.url  %></br></br>
+          <%= @activity.description %>
+        </p>
+  </div><!-- /.col -->
+  
 </div>
+
+

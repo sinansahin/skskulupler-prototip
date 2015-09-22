@@ -48,33 +48,31 @@
                   <li class="active"><a href="#tab_1-1" data-toggle="tab" aria-expanded="true">Etkinlikler</a></li>
                   <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Haberler</a></li>
                   <li class=""><a href="#tab_3-2" data-toggle="tab" aria-expanded="false">Duyurular</a></li>
-                  <li class="pull-left header"><i class="fa fa-th"></i> Custom Tabs</li>
+                  <li class="pull-left header"><i class="fa fa-th"></i>  </li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="tab_1-1">
                     <% @Activities.each do |activity| %>
-						<div class="list-group-item">
-						<%= link_to activity.title, activity %>
-				        <span style="float:right;"><%= activity.start_date.to_s%></span>
-						</div>
-						<% end%>
+          						<div class="list-group-item">
+          						<%= link_to activity.title, activity %>
+          				        <span style="float:right;"><%= activity.start_date.to_s%></span>
+          						</div>
+          						<% end%>
                   </div><!-- /.tab-pane -->
                   <div class="tab-pane" id="tab_2-2">
                     <div class="list-group">
-						  <% @infos.each do |info| %>
+          						  <% @infos.each do |info| %>
 
-					        <%= link_to info.title, info, class: "list-group-item" %>
-					      <% end %>
-						</div>
-					  </div>
+          					        <%= link_to info.title, info, class: "list-group-item" %>
+          					      <% end %>
+          						</div>
                   </div><!-- /.tab-pane -->
                   <div class="tab-pane" id="tab_3-2">
                    <div class="list-group">
-					  <% @Notice.each do |notice| %>
-			    
-			            <%= link_to notice.title, notice, class: "list-group-item" %>
-			          <% end %>
-					</div>
+          					  <% @Notice.each do |notice| %>
+          			            <%= link_to notice.title, notice, class: "list-group-item" %>
+          			          <% end %>
+          					</div>
                   </div><!-- /.tab-pane -->
                 </div><!-- /.tab-content -->
               </div><!-- nav-tabs-custom -->
