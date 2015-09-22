@@ -13,15 +13,6 @@
           <li class="list-group-item">
             <b>E-mail :</b> <a class="pull-right"><%= @club.email %></a>
           </li>
-          <li class="list-group-item">
-            <b>Etkinlik Sayısı:</b> <a class="pull-right"></a>
-          </li>
-          <li class="list-group-item">
-            <b>Duyuru Sayısı</b> <a class="pull-right">543</a>
-          </li>
-          <li class="list-group-item">
-            <b>Üye Sayısı</b> <a class="pull-right">13,287</a>
-          </li>
         </ul>
         <%= button_to "Topluluğa Üye Ol", club_roles_path(club_id: @club.id),  method: :post, class: "btn btn-primary btn-block" if user_signed_in? and not @uyemi %>
         <% if @uyemi and user_signed_in? %>
