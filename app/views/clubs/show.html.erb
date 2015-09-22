@@ -1,107 +1,108 @@
 <%= render "clubheader" %>
-<p id="notice"><%= notice %></p>
-
 <div class="row">
-    <div class="col-md-3">
-      <div class="panel panel-success">
-        <div class="panel-body">
-          <center><%= image_tag @club.avatar.url ,height: '125', width: '125', class:"image" %></center>
-        </div>
-      </div>
-      <div class="panel panel-defult">
-        <div class="panel-body">
+            <div class="col-md-3">
 
+              <!-- Profile Image -->
+              <div class="box box-primary">
+                <div class="box-body box-profile">
+                  <%= image_tag @club.avatar.url ,height: '125', width: '125', class:"profile-user-img img-responsive img-circle" %>
+                  <h3 class="profile-username text-center"><%= @club.name%></h3>
+                  <p class="text-muted text-center">  </p>
 
-          <%= button_to "Topluluğa Üye Ol", club_roles_path(club_id: @club.id),  method: :post, class: "btn btn-primary" if user_signed_in? and not @uyemi %>
-          <% if @uyemi and user_signed_in? %>
-            <a href="#" class="btn btn-success disabled"><span class="glyphicon glyphicon-ok"> </span>Topluluğa üyesiniz.</a>
-          <% end %>
-        </div>
-      </div>
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align: center">Danışman</h3>
-        </div>
-      <div class="panel-body">
-          <div class="list-group">
-          <a href="#" class="list-group-item">
-            <p class="list-group-item-text"><%= User.find_by_id(@club.supervisor).first_name+' '+User.find_by_id(@club.supervisor).last_name %></p>
-            
-          </a>
-        </div>
-        </div>
+                  <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                      <b>Etkinlik Sayısı:</b> <a class="pull-right">1,322</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Duyuru/Haber Sayısı</b> <a class="pull-right">543</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Üye Sayısı</b> <a class="pull-right">13,287</a>
+                    </li>
+                  </ul>
+                  <%= button_to "Topluluğa Üye Ol", club_roles_path(club_id: @club.id),  method: :post, class: "btn btn-primary btn-block" if user_signed_in? and not @uyemi %>
+                  <% if @uyemi and user_signed_in? %>
+                    <a href="#" class="btn btn-success btn-block disabled"><span class="glyphicon glyphicon-ok"> </span>Topluluğa üyesiniz.</a>
+                  <% end %>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
 
-      </div>
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align: center">Yönetim Kurulu</h3>
-        </div>
-        <div class="panel-body">
-          <div class="list-group">
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@Baskan_id).first_name+' '+User.find_by_id(@Baskan_id).last_name if @Baskan_id %></h4>
-            <p class="list-group-item-text">Başkan</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@BaskanYrd_id).first_name+' '+User.find_by_id(@BaskanYrd_id).last_name if @BaskanYrd_id %></h4>
-            <p class="list-group-item-text">Başkan Yardımcısı</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@Yazman_id).first_name+' '+User.find_by_id(@Yazman_id).last_name if @Yazman_id %></h4>
-            <p class="list-group-item-text">Yazman</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@Sayman_id).first_name+' '+User.find_by_id(@Sayman_id).last_name if @Sayman_id %></h4>
-            <p class="list-group-item-text">Sayman</p>
-          </a>          
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align: center">Hakkımızda</h3>
-        </div>
-        <div class="panel-body">
-          <p><%= @club.description %></p>
-          <p>E-mail : <%= @club.email %></p>
-        </div>
-      </div>
-    </div>
+              <!-- About Me Box -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Danışman</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <div class="list-group">
+                      <a href="#" class="list-group-item">
+                        <p class="list-group-item-text"><%= User.find_by_id(@club.supervisor).first_name+' '+User.find_by_id(@club.supervisor).last_name %></p>
+                        
+                      </a>
+                    </div>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
 
-        <div class="col-md-3">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align: center">Duyurular</h3>
-        </div>
-        <div class="panel-body">
-          <div class="list-group">
-          <% Notice.where(club_id: @club.id).each do |notice| %>
-            
-            <%= link_to notice.title, notice, class: "list-group-item" %><br />
-          <% end %>
-        </div>
-        </div>
-      </div>
-    </div>
+              <!-- About Me Box -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Yönetim Kurulu</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading"><%= User.find_by_id(@Baskan_id).first_name+' '+User.find_by_id(@Baskan_id).last_name if @Baskan_id %></h4>
+                      <p class="list-group-item-text">Başkan</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading"><%= User.find_by_id(@BaskanYrd_id).first_name+' '+User.find_by_id(@BaskanYrd_id).last_name if @BaskanYrd_id %></h4>
+                      <p class="list-group-item-text">Başkan Yardımcısı</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading"><%= User.find_by_id(@Yazman_id).first_name+' '+User.find_by_id(@Yazman_id).last_name if @Yazman_id %></h4>
+                      <p class="list-group-item-text">Yazman</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading"><%= User.find_by_id(@Sayman_id).first_name+' '+User.find_by_id(@Sayman_id).last_name if @Sayman_id %></h4>
+                      <p class="list-group-item-text">Sayman</p>
+                    </a>          
+                  </div>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+            <div class="col-md-9">
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#activity" data-toggle="tab">Etkinlikler</a></li>
+                  <li><a href="#infoss" data-toggle="tab">Duyurular</a></li>
+                  <li><a href="#hakkimizda" data-toggle="tab">Hakkımızda</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="active tab-pane" id="activity">
+                    
+                      <div class="list-group">
+                      <% Activity.where(club_id: @club.id).each do |activity| %>
+                        
+                        <%= link_to activity.title, activity, class: "list-group-item" %><br />
+                      <% end %>
+                      
+                    </div>
+                  </div><!-- /.tab-pane -->
+                  
 
-    <div class="col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align: center">Etkinlikler</h3>
-        </div>
-        <div class="panel-body">
-          <div class="list-group">
-          <% Activity.where(club_id: @club.id).each do |activity| %>
-            
-            <%= link_to activity.title, activity, class: "list-group-item" %><br />
-          <% end %>
-          
-        </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
+                  <div class="tab-pane" id="infoss">
+                    <div class="list-group">
+                      <% Notice.where(club_id: @club.id).each do |notice| %>
+                        
+                        <%= link_to notice.title, notice, class: "list-group-item" %><br />
+                      <% end %>
+                    </div>
+                  </div><!-- /.tab-pane -->
+                  <div class="tab-pane" id="hakkimizda">
+                    <p><%= @club.description %></p>
+                    <p>E-mail : <%= @club.email %></p>
+                  </div><!-- /.tab-pane -->
+                </div><!-- /.tab-content -->
+              </div><!-- /.nav-tabs-custom -->
+            </div><!-- /.col -->
+          </div>
+<p id="notice"><%= notice %></p>

@@ -16,11 +16,9 @@
     })
   </script>
 </head>
-<body>
+<body class="hold-transition skin-blue layout-top-nav">
 
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-body">
+<div class="wrapper">
       <% if notice.present? %>
           <div class="alert alert-success" style="font-size:20px;text-align:center;border-radius: 0 !important;">
             <%= notice %>
@@ -31,20 +29,11 @@
           </div>
       <%end%>
       <%= yield %>
-    </div>
-    <div class="panel-footer">
-      <div class="row">
-         <div class="col-md-12">
-            <blockquote class="pull-right">
-            <p>
-              Bu proje OMÜ Uzem Yazılım Kampında yapılmıştır.
-            </p> <small> &copy; 2015 Ondokuz Mayıs Üniversitesi</small>
-            <a href="http://www.omu.edu.tr/en" class="btn btn-success">Omü Ansayfa</a>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <footer class="main-footer">
+        <div class="container">
+          Bu proje Uzem Akademi 2015 için yapılmıştır.
+        </div><!-- /.container -->
+      </footer>
+    </div><!-- ./wrapper -->
 </body>
 </html>

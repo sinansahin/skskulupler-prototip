@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20150828110658) do
     t.string   "address"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-      t.string   "avatar_file_name"
-      t.string   "avatar_content_type"
-      t.integer  "avatar_file_size"
-      t.datetime "avatar_updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "club_roles", force: :cascade do |t|
