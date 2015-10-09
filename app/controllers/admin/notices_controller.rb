@@ -34,7 +34,7 @@ class Admin::NoticesController < ApplicationController
 
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to admin_notices_path, notice: 'Notice was successfully created.' }
+        format.html { redirect_to admin_notices_path, notice: 'Duyuru oluşturuldu.' }
         format.json { render :show, status: :created, location: admin_notices_path }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class Admin::NoticesController < ApplicationController
   def update
     respond_to do |format|
       if @notice.update(notice_params)
-        format.html { redirect_to admin_notices_path, notice: 'Notice was successfully updated.' }
+        format.html { redirect_to admin_notices_path, notice: 'Duyuru düzenlendi.' }
         format.json { render :show, status: :ok, location: admin_notices_path }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class Admin::NoticesController < ApplicationController
   def destroy
     @notice.destroy
     respond_to do |format|
-      format.html { redirect_to admin_notices_path, notice: 'Notice was successfully destroyed.' }
+      format.html { redirect_to admin_notices_path, notice: 'Duyuru silindi.' }
       format.json { head :no_content }
     end
   end

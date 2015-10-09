@@ -14,6 +14,7 @@
         
     <div class="col-md-3">
         <%= link_to "Düzenle", edit_admin_info_path(info.id), class:"btn btn-default" %>
+        <%= link_to "Sil", admin_info_path(info.id), class:"btn btn-danger" , method: :delete , data: {confirm: "Emin misiniz?"} %>
     </div> 
     </div>
 

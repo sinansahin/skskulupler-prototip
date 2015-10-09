@@ -38,7 +38,7 @@ class Admin::InfosController < ApplicationController
     authorize @info
     respond_to do |format|
       if @info.save
-        format.html { redirect_to admin_infos_path, notice: 'Club was successfully created.' }
+        format.html { redirect_to admin_infos_path, notice: 'Haber oluşturuldu.' }
         format.json { render :show, status: :created, location: admin_infos_path }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class Admin::InfosController < ApplicationController
   def update
     respond_to do |format|
       if @info.update(info_params)
-        format.html { redirect_to admin_infos_path, notice: 'Club was successfully updated.' }
+        format.html { redirect_to admin_infos_path, notice: 'Haber düzenlendi.' }
         format.json { render :show, status: :ok, location: admin_infos_path }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class Admin::InfosController < ApplicationController
   def destroy
     @info.destroy
     respond_to do |format|
-      format.html { redirect_to admin_infos_path, notice: 'Club was successfully destroyed.' }
+      format.html { redirect_to admin_infos_path, notice: 'Haber silindi.' }
       format.json { head :no_content }
     end
   end

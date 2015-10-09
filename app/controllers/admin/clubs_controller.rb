@@ -38,7 +38,7 @@ class Admin::ClubsController < ApplicationController
     authorize @club
     respond_to do |format|
       if @club.save
-        format.html { redirect_to admin_clubs_path, notice: 'Club was successfully created.' }
+        format.html { redirect_to admin_clubs_path, notice: 'Kulüp oluşturuldu.' }
         format.json { render :show, status: :created, location: admin_clubs_path }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class Admin::ClubsController < ApplicationController
   def update
     respond_to do |format|
       if @club.update(club_params)
-        format.html { redirect_to admin_clubs_path, notice: 'Club was successfully updated.' }
+        format.html { redirect_to admin_clubs_path, notice: 'Kulüp düzenlendi.' }
         format.json { render :show, status: :ok, location: admin_clubs_path }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class Admin::ClubsController < ApplicationController
   def destroy
     @club.destroy
     respond_to do |format|
-      format.html { redirect_to admin_clubs_path, notice: 'Club was successfully destroyed.' }
+      format.html { redirect_to admin_clubs_path, notice: 'Kulüp silindi.' }
       format.json { head :no_content }
     end
   end

@@ -5,6 +5,7 @@
       <%= notice.content %><br />
       <%= image_tag notice.avatar.url ,height: '25', width: '25' %>
       <%= link_to "Düzenle", edit_admin_notice_path(notice.id), class:"btn btn-default" %>
+       <%= link_to "Sil", admin_notice_path(notice.id), class:"btn btn-danger" , method: :delete , data: {confirm: "Emin misiniz?"} %>
     </div>
   </div>
 <% end %>
