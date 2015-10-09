@@ -1,1 +1,1 @@
-json.extract! @notice, :id, :club_id, :title, :content, :created_at, :updated_at
+json.extract! @notice, :id, :club_id, :title, :content, :avatar, :created_at, :updated_at
