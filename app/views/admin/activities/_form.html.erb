@@ -15,33 +15,28 @@
     <%= f.input :club_id, collection: Club.all, label: 'Topluluk Seçiniz.' %>
     </div>
   <div class="field">
-
-    <%= f.input :title %>
+    <%= f.input :title , label: "Başlık" %>
   </div>
   <div class="field">
-
-    <%= f.input :image %>
+  <%= f.input :avatar, as: :file , label: "Etkinlik Resmi" %>
   </div>
   <div class="field">
  
-    <%= f.input :description %>
+    <%= f.input :description , label: "Açıklama" %>
   </div>
-    <div class="field">
-  <%= f.input :avatar, as: :file %>
-  
+
+  <div class="field">
+
+    <%= f.input :start_date , label: "Başlangıç Zamanı" %>
+  </div>
+  <div class="field">
+    <%= f.input :finish_date , label: "Bitiş Zamanı" %>
   </div>
   <div class="field">
 
-    <%= f.input :start_date %>
-  </div>
-  <div class="field">
-    <%= f.input :finish_date %>
-  </div>
-  <div class="field">
-
-    <%= f.input :address %>
+    <%= f.input :address , label: "Etkinlik Adresi" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Ekle" %>
   </div>
 <% end %>
