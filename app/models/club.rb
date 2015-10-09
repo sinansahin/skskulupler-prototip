@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Club < ActiveRecord::Base
 	#has_one :club_role, dependent: :destroy
 	has_many :notices
