@@ -23,4 +23,7 @@ class User < ActiveRecord::Base
     (roles.find_by_name("Admin") != nil) ? true : false
   end
 
+  def full_name
+    first_name + " " + last_name
+  end
 end
