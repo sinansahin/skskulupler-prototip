@@ -7,6 +7,7 @@
       <div class="panel-body">
         <center><%= image_tag club.avatar.url ,height: '125', width: '125', class:"image" %></center>
       </div>
-      <div class="panel-footer"><%= link_to club.name, club %></div>
+      <div class="panel-footer">          <span class="TextType">         
+          <%= link_to club.name , club%></span></div>
     </div>
     <% end %>

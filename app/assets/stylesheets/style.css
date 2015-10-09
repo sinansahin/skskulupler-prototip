@@ -49,3 +49,9 @@ background-position: top-left;
 		color: black !important;
 
 }
+.TextType :hover{
+	text-decoration: none;
+	color:gray;
+	background-color: white;
+	font-size: 16px;
+}
