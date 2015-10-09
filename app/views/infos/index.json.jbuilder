@@ -1,4 +1,4 @@
-json.array!(@news) do |news|
-  json.extract! news, :id, :title, :content, :image
-  json.url news_url(news, format: :json)
+json.array!(@infos) do |info|
+  json.extract! info, :id, :title, :content, :image
+  json.url info_url(info, format: :json)
 end
