@@ -1,4 +1,4 @@
-<%= simple_form_for([:admin, @activity]) do |f| %>
+ <%= simple_form_for([:admin, @activity]) do |f| %>
   <% if @activity.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this club from being saved:</h2>
@@ -25,9 +25,9 @@
     <%= f.input :description , label: "Açıklama" %>
   </div>
 
-  <div class="field">
+  <div class="">
 
-    <%= f.input :start_date , label: "Başlangıç Zamanı" %>
+    <%= f.input :start_date, label: "Başlangıç Zamanı" %>
   </div>
   <div class="field">
     <%= f.input :finish_date , label: "Bitiş Zamanı" %>
@@ -37,6 +37,6 @@
     <%= f.input :address , label: "Etkinlik Adresi" %>
   </div>
   <div class="actions">
-    <%= f.submit "Ekle" %>
+    <%= f.submit "Ekle",class: 'btn btn-info' %>
   </div>
 <% end %>
