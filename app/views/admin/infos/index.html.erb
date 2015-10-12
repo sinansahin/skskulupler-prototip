@@ -4,19 +4,18 @@
 <% @infos.each do |info| %>
 
 
-  <div class="row">
-    <div class="col-md-8" >
-        <h2><%= info.title %></h2><br />
+<div class="row">
+    <div class="col-md-1">
         <%= image_tag info.avatar.url ,height: '25', width: '25' %>
-        <p><%= info.content %></p>
     </div>
-   
-        
+    <div class="col-md-8" >
+        <%=info.title%>
+    </div>        
     <div class="col-md-3">
         <%= link_to "Düzenle", edit_admin_info_path(info.id), class:"btn btn-default" %>
         <%= link_to "Sil", admin_info_path(info.id), class:"btn btn-danger" , method: :delete , data: {confirm: "Emin misiniz?"} %>
     </div> 
-    </div>
+</div>
 
   
 
