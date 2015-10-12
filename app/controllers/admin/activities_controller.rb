@@ -59,7 +59,7 @@ class Admin::ActivitiesController < ApplicationController
   def destroy
     @activity.destroy
     respond_to do |format|
-      format.html { redirect_to activities_url, notice: 'Etkinlik silindi.' }
+      format.html { redirect_to admin_activities_path, notice: 'Etkinlik silindi.' }
       format.json { head :no_content }
     end
   end
