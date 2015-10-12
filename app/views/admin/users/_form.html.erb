@@ -1,4 +1,4 @@
-<%= form_for([:admin,@user], html: { multipart: true }) do |f| %>
+<%= simple_form_for([:admin,@user], html: { multipart: true }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this club from being saved:</h2>
@@ -11,22 +11,17 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.input :first_name , label: "Ad" %>
   </div>
   <div class="field">
-  <%= f.label :avatar %><br>
-  <%= f.file_field :avatar %>
-  
+    <%= f.input :last_name , label: "Soyad" %>
   </div>
-    <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-     </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_area :email %>
+    <%= f.input :avatar , label: "Avatar" %>
+  </div>
+  <div class="field">
+    <%= f.input :email , label: "E-Posta" %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Ekle",class: 'btn btn-info' %>
   </div>
 <% end %>
