@@ -12,17 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :title %>
+    <%= f.input :title , label: "Başlık"  %>
   </div>
     <div class="field">
-    <%= f.input :content %>
+    <%= f.input :content , label: "Haber İçeriği"  %>
      </div>
     <div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.file_field :avatar %>
-    
+    <%= f.input :avatar , label: "Haber Resmi"  %>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Ekle" , class: 'btn btn-info' %>
   </div>
 <% end %>
