@@ -13,18 +13,21 @@
 
 ActiveRecord::Schema.define(version: 20150828110658) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: :cascade do |t|
     t.integer  "club_id"
-    t.string   "title"
-    t.string   "image"
+    t.string   "title",               limit: 255
+    t.string   "image",               limit: 255
     t.text     "description"
     t.datetime "start_date"
     t.datetime "finish_date"
-    t.string   "address"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
+    t.string   "address",             limit: 255
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
@@ -38,48 +41,48 @@ ActiveRecord::Schema.define(version: 20150828110658) do
   end
 
   create_table "clubs", force: :cascade do |t|
-    t.string   "name"
-    t.string   "logo"
+    t.string   "name",                limit: 255
+    t.string   "logo",                limit: 255
     t.integer  "supervisor"
     t.text     "regulation"
     t.text     "description"
-    t.string   "email"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
+    t.string   "email",               limit: 255
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
 
   create_table "infos", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",               limit: 255
     t.text     "content"
-    t.string   "image"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
+    t.string   "image",               limit: 255
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
 
   create_table "notices", force: :cascade do |t|
     t.integer  "club_id"
-    t.string   "title"
+    t.string   "title",               limit: 255
     t.text     "content"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "roles_users", id: false, force: :cascade do |t|
@@ -87,32 +90,32 @@ ActiveRecord::Schema.define(version: 20150828110658) do
     t.integer "role_id", null: false
   end
 
-  add_index "roles_users", ["role_id"], name: "index_roles_users_on_role_id"
-  add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id"
+  add_index "roles_users", ["role_id"], name: "index_roles_users_on_role_id", using: :btree
+  add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "student_number"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "first_name",             limit: 255
+    t.string   "last_name",              limit: 255
+    t.string   "student_number",         limit: 255
+    t.string   "avatar_file_name",       limit: 255
+    t.string   "avatar_content_type",    limit: 255
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
