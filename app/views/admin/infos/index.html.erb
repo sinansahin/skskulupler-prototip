@@ -4,7 +4,7 @@
 <% @infos.each do |info| %>
 
 
-  <div class="row">
+<div class="row">
     <div class="col-md-1">
         <%= image_tag info.avatar.url ,height: '25', width: '25' %>
     </div>
@@ -15,7 +15,7 @@
         <%= link_to "Düzenle", edit_admin_info_path(info.id), class:"btn btn-default" %>
         <%= link_to "Sil", admin_info_path(info.id), class:"btn btn-danger" , method: :delete , data: {confirm: "Emin misiniz?"} %>
     </div> 
-    </div>
+</div>
 
   
 
