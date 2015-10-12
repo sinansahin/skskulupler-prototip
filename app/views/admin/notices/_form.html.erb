@@ -12,22 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :title %>
+    <%= f.input :title , label: "Başlık"%>
   </div>
     <div class="field">
-    <%= f.input :content %>
+    <%= f.input :content , label: "Duyuru İçeriği" %>
      </div>
      
   <div class="field">
-  <%= f.label :avatar %><br>
-  <%= f.file_field :avatar %>
-  
+  <%= f.input :avatar , label: "Duyuru Resmi" %>
   </div>
 
   <div class="field">
     <%= f.input :club_id, collection: Club.all, label: 'Topluluk Seçiniz.' %>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Ekle" , class: 'btn btn-info' %>
   </div>
 <% end %>
