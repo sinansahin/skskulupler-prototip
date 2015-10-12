@@ -1,4 +1,4 @@
-<%= form_for([:admin,@club]) do |f| %>
+<%= simple_form_for([:admin,@club]) do |f| %>
   <% if @club.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@club.errors.count, "error") %> prohibited this club from being saved:</h2>
@@ -12,31 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Ad" %><br>
-    <%= f.text_field :name %>
+    <%= f.input :name , label: "Kulüp Adı" %>
   </div>
   <div class="field">
-  <%= f.label "Logo" %><br>
-  <%= f.file_field :avatar %>
+  <%= f.input :avatar , label: "Kulüp Logosu" %>
   </div>
   <div class="field">
-    <%= f.label "Açıklama"%><br>
-    <%= f.text_area :description %>
+    <%= f.input :description , label: "Açıklama" %>
   </div>
   <div class="field">
-    <%= f.label "Danışman" %><br>
-    <%= f.number_field :supervisor%>
+    <%= f.input :supervisor , label: "Danışman" %>
  </div>
   <div class="field">
-    <%= f.label "Yönetmelik" %><br>
-    <%= f.text_area :regulation %>
+    <%= f.input :regulation , label: "Yönetmelik" %>
   </div>
 
   <div class="field">
-    <%= f.label "E-Posta" %><br>
-    <%= f.text_field :email %>
+    <%= f.input :email , label: "E-Posta" %>
   </div>
   <div class="actions">
-    <%= f.submit "Ekle" %>
+    <%= f.submit "Ekle" , class: 'btn btn-info' %>
   </div>
 <% end %>
