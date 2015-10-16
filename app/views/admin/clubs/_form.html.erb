@@ -21,11 +21,40 @@
     <%= f.input :description , label: "Açıklama" %>
   </div>
   <div class="field">
-    <% array = [] %>
     <%= f.input :supervisor do %>
-      <%= f.select :supervisor, clubmembers %>
+      <%= f.select :supervisor, club_members %>
     <% end %>
  </div>
+   <div class="field">
+    <%= f.input :president do %>
+      <%= f.select :president, club_members %>
+    <% end %>
+ </div>
+    <div class="field">
+    <%= f.input :vice_president do %>
+      <%= f.select :vice_president, club_members %>
+    <% end %>
+ </div>
+    <span class="field">
+    <%= f.input :secretary do %>
+      <%= f.select :secretery, club_members %>
+    <% end %>
+    </span>
+  <span class="field">
+    <%= f.input :treasurer do %>
+      <%= f.select :treasurer, club_members %>
+    <% end %>
+  </span>
+  <span class="field">
+    <%= f.input :founder_member_1 do %>
+      <%= f.select :founder_member_1, club_members %>
+    <% end %>
+  </span>
+  <span class="field">
+    <%= f.input :founder_member_2 do %>
+      <%= f.select :founder_member_2, club_members %>
+    <% end %>
+  </span>
   <div class="field">
     <%= f.input :regulation , label: "Yönetmelik" %>
   </div>
@@ -34,7 +63,7 @@
     <%= f.input :email , label: "E-Posta" %>
   </div>
   <div class="actions">
-    <%= f.submit "Ekle" , class: 'btn btn-info' %>
+    <%= f.submit "Kaydet" , class: 'btn btn-info' %>
   </div>
 <% end %>
 

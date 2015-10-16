@@ -35,8 +35,6 @@
           </div>
       </div><!-- /.box-body -->
     </div><!-- /.box -->
-
-    <!-- About Me Box -->
     <div class="box box-primary">
       <div class="box-header with-border">
         <h3 class="box-title">Yönetim Kurulu</h3>
@@ -44,25 +42,27 @@
       <div class="box-body">
         <div class="list-group">
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@Baskan_id).first_name+' '+User.find_by_id(@Baskan_id).last_name if @Baskan_id %></h4>
-            <p class="list-group-item-text">Başkan</p>
+            <p class="list-group-item-text"><%= @club.president %></p>
           </a>
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@BaskanYrd_id).first_name+' '+User.find_by_id(@BaskanYrd_id).last_name if @BaskanYrd_id %></h4>
-            <p class="list-group-item-text">Başkan Yardımcısı</p>
+            <p class="list-group-item-text"><%= @club.vice_president %></p>
           </a>
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@Yazman_id).first_name+' '+User.find_by_id(@Yazman_id).last_name if @Yazman_id %></h4>
-            <p class="list-group-item-text">Yazman</p>
+            <p class="list-group-item-text"><%= @club.secretery %></p>
           </a>
           <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= User.find_by_id(@Sayman_id).first_name+' '+User.find_by_id(@Sayman_id).last_name if @Sayman_id %></h4>
-            <p class="list-group-item-text">Sayman</p>
-          </a>          
-        </div>
+            <p class="list-group-item-text"><%= @club.treasurer %></p>
+          </a>
+          <a href="#" class="list-group-item">
+            <p class="list-group-item-text"><%= @club.founder_member_1 %></p>
+          </a>
+           <a href="#" class="list-group-item">
+            <p class="list-group-item-text"><%= @club.founder_member_2 %></p>
+          </a>
       </div><!-- /.box-body -->
     </div><!-- /.box -->
   </div><!-- /.col -->
+  </div>
   <div class="col-md-9">
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
@@ -99,4 +99,6 @@
     </div><!-- /.nav-tabs-custom -->
   </div><!-- /.col -->
 </div>
+</div><!--render kapatildi-->
+</div> <!--render kapatildi-->
 
