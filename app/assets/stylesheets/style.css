@@ -56,3 +56,14 @@ background-position: top-left;
 	width: 100px;
 
 }
+.nav-text :hover{
+	text-decoration: none;
+	color:gray;
+	background-color: white;
+	font-size: 16px;
+}
+.nav-text{
+	font-size: 18px;
+	left: -15px;
+	margin-top: 10px;
+}

@@ -31,11 +31,12 @@
               	<div class="list-group">
 				  <% @Club.each do |club| %>
 				  <div class="list-group-item">	
-					   <%= image_tag club.avatar.url ,height: '25', width: '25'%>
-					   &nbsp;
-          <span class="TextType">         
-          <%= link_to club.name , club%></span>
-	
+					   <div class="row">
+             <div class="col-md-5"><%= image_tag club.avatar.url ,class:"profile-user-img img-responsive img-circle" %></div>
+            <div class="col-md-7 nav-text"><%= link_to club.name , club%></div>
+          </div>
+
+             
 				  </div>
 				  <% end %>
 				</div>
