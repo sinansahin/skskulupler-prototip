@@ -36,12 +36,10 @@ background-position: top-left;
 
 
 #club{
-		text-decoration: none !important;
 		font-size: 15px;
 
 }
 #club :hover{
-		text-decoration: none !important;
 		background-color: white !important;
 		color: black !important;
 
@@ -52,13 +50,16 @@ background-position: top-left;
 
 }
 .TextType:hover{
-	text-decoration: none;
 	background-color:#3C8DBC !important;
 	border-radius: 5px;
 	padding: 5px;
-	font-weight: 800;
-	background-color: white;
-	
+	font-weight: 800;	
+}
+.TextType a:hover{
+	background-color:#3C8DBC !important;
+	border-radius: 5px;
+	padding: 5px;
+	font-weight: 800;	
 }
 
 .date_config{
