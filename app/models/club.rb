@@ -4,7 +4,7 @@ class Club < ActiveRecord::Base
 	has_many :notices, dependent: :destroy
 	has_many :activities, dependent: :destroy
 	#has_and_belongs_to_many :users
-	has_many :club_roles, dependent: :destroy
+	has_many :club_role, dependent: :destroy
   	has_many :users, through: :club_role
 
     has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "omu.jpg"

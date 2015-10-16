@@ -9,12 +9,12 @@
         <%= image_tag club.avatar.url ,height: '25', width: '25' %>
     </div>
     <div class="col-md-8" >
-        <%=club.name%>
+        <%=link_to club.name, club_member_admin_club_path(club) %>
     </div>
    
         
     <div class="col-md-3">
-        <%= link_to "Düzenle", edit_admin_club_path(club.id), class:"btn btn-default" %>
+        <%= link_to "Düzenle", edit_admin_club_path(club.id), class:"btn btn-default"%>
         <%= link_to "Sil", admin_club_path(club.id), class:"btn btn-danger" , method: :delete , data: {confirm: "Emin misiniz?"} %>
     </div> 
     </div>

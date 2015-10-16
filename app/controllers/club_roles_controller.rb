@@ -21,6 +21,6 @@ class ClubRolesController < ApplicationController
   private
 
   def club_role_params
-      params.permit(:club_id)
+      params.permit(:club_id,:user_id,:role_id)
     end
 end

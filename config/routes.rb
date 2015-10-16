@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   resources :clubs , only: [:index, :show]
   get 'home/yonerge' => 'home#yonerge'
   namespace :admin do 
-    resources :clubs , except: [:show]
+    resources :clubs , except: [:show] do
+      get :club_member, on: :member
+      get :topluluktan_cikar, on: :member
+    end
     resources :users , except: [:show]
     resources :notices
+    resources :club_roles
     resources :infos
     resources :activities
   end

@@ -2,7 +2,7 @@
 
 class Admin::ClubsController < ApplicationController
   layout 'admin'
-  before_action :set_club, only: [:show, :edit, :update, :destroy]
+  before_action :set_club, only: [:show, :edit, :update, :destroy, :club_member, :topluluktan_cikar]
   before_action :authenticate_user!
   rescue_from Pundit::NotAuthorizedError, with: :permission_denied
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
@@ -29,6 +29,11 @@ class Admin::ClubsController < ApplicationController
 
   # GET /clubs/1/edit
   def edit
+  end
+
+  def club_member
+
+
   end
 
   # POST /clubs
@@ -69,6 +74,16 @@ class Admin::ClubsController < ApplicationController
       format.html { redirect_to admin_clubs_path, notice: 'Kulüp silindi.' }
       format.json { head :no_content }
     end
+  end
+
+  def topluluktan_cikar
+    club_role = ClubRole.where(club_id: @club, user_id: params[:user_id]).first
+    if club_role.destroy
+      flash[:notice] = "Kişi topluluktan başarıyla çıkarıldı."
+    else
+      flash[:notice] = "Kişi topluluktan çıkarılamadı."
+    end
+    redirect_to club_member_admin_club_path(@club)
   end
 
   private

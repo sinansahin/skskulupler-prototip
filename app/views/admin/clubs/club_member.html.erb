@@ -1,0 +1,7 @@
+
+
+	<%@club.users.each do |user|%>
+			<%=user.full_name%> 
+			<%= link_to "Topluluktan Çıkar", topluluktan_cikar_admin_club_path(@club, user_id: user.id), class: "btn btn-danger", data: {confirm: "Bu kişiyi gruptan çıkaracaksınız emin misiniz?"}%>
+	  
+	 <%end%>

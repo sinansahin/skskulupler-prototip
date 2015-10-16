@@ -18,23 +18,7 @@ class ClubsController < ApplicationController
       @uyemi = ClubRole.where("user_id = ? AND club_id = ?", current_user.id, @club.id).present?
     end
     
-    @TumUyeler = @club.club_roles
-    @TumUyeler.each do |uye|
-      if uye.role.name == "Başkan"
-        @Baskan_id = uye.user_id
-      elsif uye.role.name == "Başkan Yardımcısı"
-        @BaskanYrd_id = uye.user_id
-      elsif uye.role.name == "Yazman"
-        @Yazman_id = uye.user_id
-      elsif uye.role.name == "Sayman"
-        @Sayman_id = uye.user_id
-      end
-    end
-
-
-    
-  
-
+    @TumUyeler = @club.users
   end
 
   # Use callbacks to share common setup or constraints between actions.

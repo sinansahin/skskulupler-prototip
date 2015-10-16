@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, on: :create
   validates :first_name, :last_name, length: {in: 3..50}
   after_create :set_default_role
-   def set_default_role
+  def set_default_role
     self.roles << Role.where(:name => "Student")
   end  
   def admin?
