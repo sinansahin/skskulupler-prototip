@@ -1,13 +1,13 @@
 <%= render "home/header" %>
-<div class="jumbotron">
+<div class="jumbotron col-md-12">
+<div class="col-md-5 col-md-offset-3">
 <h2>Hesabı Düzenleme</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.input :email, autofocus: true, label:"E-Posta" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -15,28 +15,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.input :password, autocomplete: "off",label: "Yeni Parola" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.input :password_confirmation, autocomplete: "off", label: "Yeni Parola Tekrarı" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.input :current_password, autocomplete: "off", label:"Eski Parola" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Güncelle" %>
+    <%= f.submit "Güncelle",class:"btn btn-info" %>
+    <%= button_to "Hesabi Kaldir", registration_path(resource_name), data: { confirm: "Eminmisiniz?" }, method: :delete ,class:"btn btn-danger" %>
   </div>
 <% end %>
 
-<h3>Hesabı Kaldır</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class:"btn btn-default" %>
+</div>
 </div>
