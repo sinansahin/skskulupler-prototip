@@ -21,7 +21,10 @@
     <%= f.input :description , label: "Açıklama" %>
   </div>
   <div class="field">
-    <%= f.input :supervisor , label: "Danışman" %>
+    <% array = [] %>
+    <%= f.input :supervisor do %>
+      <%= f.select :supervisor, supervisorr %>
+    <% end %>
  </div>
   <div class="field">
     <%= f.input :regulation , label: "Yönetmelik" %>
@@ -34,3 +37,5 @@
     <%= f.submit "Ekle" , class: 'btn btn-info' %>
   </div>
 <% end %>
+
+

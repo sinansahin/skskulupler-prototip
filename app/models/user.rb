@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   #has_and_belongs_to_many :clubs 
   has_many :club_roles, dependent: :destroy
   has_many :clubs, through:  :club_roles
-  
+  has_many :club_s, class_name: "ClubRole", foreign_key: "user_id"
+  has_many :club_supervisor, through: :club_s, source: :user
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "user.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates :first_name, :last_name, :email, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828110658) do
+ActiveRecord::Schema.define(version: 20151016081251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150828110658) do
   create_table "clubs", force: :cascade do |t|
     t.string   "name",                limit: 255
     t.string   "logo",                limit: 255
-    t.integer  "supervisor"
+    t.string   "supervisor"
     t.text     "regulation"
     t.text     "description"
     t.string   "email",               limit: 255
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(version: 20150828110658) do
     t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "president"
+    t.string   "vice_president"
+    t.string   "treasurer"
+    t.string   "secretery"
+    t.string   "founder_member_1"
+    t.string   "founder_member_2"
   end
 
   create_table "infos", force: :cascade do |t|

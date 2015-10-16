@@ -29,7 +29,7 @@
       <div class="box-body">
         <div class="list-group">
             <a href="#" class="list-group-item">
-              <p class="list-group-item-text"><%= User.find_by_id(@club.supervisor).first_name+' '+User.find_by_id(@club.supervisor).last_name %></p>
+              <p class="list-group-item-text"><%= @club.supervisor %></p>
               
             </a>
           </div>

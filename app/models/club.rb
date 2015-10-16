@@ -13,4 +13,5 @@ class Club < ActiveRecord::Base
 	validates :avatar, presence: {message: "yüklenmesi zorunludur."}
 	validates :email, presence: { message: "alanı boş bırakılamaz."}, uniqueness: {message: "alanı benzersiz olmalıdır."}
 
+	 
 end
