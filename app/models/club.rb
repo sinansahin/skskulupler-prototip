@@ -1,5 +1,6 @@
 # encoding: utf-8
 class Club < ActiveRecord::Base
+	
 	#has_one :club_role, dependent: :destroy
 	has_many :notices, dependent: :destroy
 	has_many :activities, dependent: :destroy
@@ -13,5 +14,4 @@ class Club < ActiveRecord::Base
 	validates :avatar, presence: {message: "yüklenmesi zorunludur."}, on: :create
 	validates :email, presence: { message: "alanı boş bırakılamaz."}, uniqueness: {message: "alanı benzersiz olmalıdır."}
 
-	 
 end

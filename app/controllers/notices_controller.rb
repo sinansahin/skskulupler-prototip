@@ -3,14 +3,12 @@ class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy, :create]
 
-  # GET /notices
-  # GET /notices.json
+
   def index
     @notices = Notice.all
   end
 
-  # GET /notices/1
-  # GET /notices/1.json
+
   def show
     @club = Club.find_by_id(@notice.club_id)
   end
