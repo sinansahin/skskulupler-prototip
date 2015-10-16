@@ -1,6 +1,7 @@
 
 *{
 	font-family: "Times New Roman", Times, serif;
+	text-decoration: none !important;
 }
 body {
 background-image: url(bg.jpg);
@@ -50,14 +51,14 @@ background-position: top-left;
 	font-weight: 700;
 
 }
-.TextType :hover{
+.TextType:hover{
 	text-decoration: none;
 	background-color:#3C8DBC !important;
 	border-radius: 5px;
 	padding: 5px;
 	font-weight: 800;
 	background-color: white;
-	font-size: 16px;
+	
 }
 
 .date_config{
@@ -68,7 +69,7 @@ background-position: top-left;
 	text-decoration: none;
 	color:gray;
 	background-color: white;
-	font-size: 16px;
+	font-weight: 750;
 }
 .nav-text{
 	font-size: 18px;
@@ -80,4 +81,33 @@ background-position: top-left;
 }
 .margintop{
 	margin-top: 10px !important;
+}
+.info-image{
+	width: 500px;
+	padding: 5px auto;
+	border-radius: 5px;
+	border:5px solid #e57373;
+}
+.info-header{
+	font-size: 18px;
+	font-weight: 700;
+	color: gray;
+	border-top: 3px solid #3C8DBC;
+	border-bottom:3px solid #e57373;
+}
+.info-content{
+	border-top: 3px solid #3C8DBC;
+	font-weight:700;
+	font-size: 18px;
+
+}
+.home-image-content{
+	border: 3px solid #3C8DBC;
+	border-radius: 8px;
+	width: 150px;
+	height: 50px;
+}
+.home-info-content{
+
+	margin-left: 10px;
 }
