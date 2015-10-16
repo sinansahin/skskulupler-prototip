@@ -1,7 +1,8 @@
 
-
+	<h2>Klüp Kişi Listesi</h2>
 	<%@club.users.each do |user|%>
-			<%=user.full_name%> 
+			<%= image_tag user.avatar ,height: '25', width: '25', class:" img-circle" %><%=user.full_name%>
+			<span style="float:right;">
 			<%= link_to "Topluluktan Çıkar", topluluktan_cikar_admin_club_path(@club, user_id: user.id), class: "btn btn-danger", data: {confirm: "Bu kişiyi gruptan çıkaracaksınız emin misiniz?"}%>
-	  
+	  		</span>
 	 <%end%>
