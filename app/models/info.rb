@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Info < ActiveRecord::Base
 	  validates :title , :content , presence: {message: "alanı boş bırakılamaz"}
 	  validates :avatar, presence: {message: "yüklenmesi zorunludur."} , on: :create

@@ -1,3 +1,4 @@
+#encoding: utf-8
 module ClubsHelper
  def club_members
  	array = []
