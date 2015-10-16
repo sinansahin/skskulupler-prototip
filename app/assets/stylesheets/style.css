@@ -45,9 +45,17 @@ background-position: top-left;
 		color: black !important;
 
 }
+.TextType{
+	font-size: 18px;
+	font-weight: 700;
+
+}
 .TextType :hover{
 	text-decoration: none;
-	color:gray;
+	background-color:#3C8DBC !important;
+	border-radius: 5px;
+	padding: 5px;
+	font-weight: 800;
 	background-color: white;
 	font-size: 16px;
 }
@@ -67,7 +75,9 @@ background-position: top-left;
 	left: -15px;
 	margin-top: 10px;
 }
-.fixerr{
-	position: relative;
-	bottom: 0px;
+.center{
+	text-align: center;
+}
+.margintop{
+	margin-top: 10px !important;
 }

@@ -5,9 +5,11 @@
     <div class="panel panel-default col-md-3">
     
       <div class="panel-body">
-        <center><%= image_tag club.avatar.url ,height: '125', width: '125', class:"image" %></center>
+        <center><%= image_tag club.avatar.url ,height: '125', width: '125', class:"profile-club-img-2 img-responsive img-circle" %></center>
       </div>
-      <div class="panel-footer">          <span class="TextType">         
-          <%= link_to club.name , club%></span></div>
+      <div class="panel-footer center">          
+      		<span class="TextType">         
+          <%= link_to club.name , club%></span>
+          </div>
     </div>
     <% end %>
