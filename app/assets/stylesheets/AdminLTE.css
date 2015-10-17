@@ -3293,12 +3293,15 @@ table.text-center th {
   margin-left: -10px !important;
 }
 .profile-icon-img {
-  margin: 0 auto;
-  width:  25px !important;
-  height:  25px !important;
+  float: left;
+  left: -10px !important;
+  margin-top: 10px;
+  border-radius: 25px;
+  width:  35px !important;
+  height:  35px !important;
   padding: 3px;
   border: 3px solid #d2d6de;
-  margin-left: -10px !important;
+  
 }
 .profile-club-img-2 {
   margin: 0 auto;
@@ -4750,4 +4753,10 @@ table.text-center th {
   .table-responsive > .table tr td {
     white-space: normal!important;
   }
+}
+.navbar-header{
+  margin-left: 15px !important;
+}
+.navbar-brand:hover{
+  background-color: #1e88e5 !important;
 }
