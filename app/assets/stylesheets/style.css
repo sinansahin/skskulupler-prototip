@@ -116,8 +116,8 @@ background-position: top-left;
 	bottom: 15px;
 }
 
-a:hover {
+.aconfig:hover {
   color: #fff;
-  opacity: 0.1;
-  background-color: #009688;
+  opacity: 0.1 !important;
+  background-color: #009688 !important;
 }
