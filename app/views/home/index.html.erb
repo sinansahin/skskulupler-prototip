@@ -46,17 +46,17 @@
    </ul>
  </div>
 </div>
-<div class="">
-  <div class="well col-md-6"> 
+<div class="col-md-6">
+  <div class="well col-md-12"> 
     <div class="list-group">
       <h3 style="margin-top: -13px; text-align: center">Haberler</h3>
       <% @infos.each do |info| %>
       <div class= "list-group-item col-md-12">
-        <h1><%= link_to info.title, info ,class: "home-info-title col-md-12" %></h1>
-        <p class="glyphicon glyphicon-time col-md-12" style="margin-top: -18px"> Oluşturulma Zamanı: <%= info.created_at %></p>
+        <h1 class="home-info-title" style="text-align:left; padding-left:6px"><%= link_to info.title, info ,class: "btn btn-md btn-default col-md-12" %></h1>
+        <p class="glyphicon glyphicon-time col-md-12" > Oluşturulma Zamanı: <%= info.created_at %></p>
         <%= image_tag info.avatar.url, class: "home-info-image col-md-4"%>
         <p class="col-md-8"><%= info.content[0..250] %></p>
-        <div class="btn btn-info col-md-4 pull-right"><%= link_to "Devamını Oku" , info ,class: "home-info-title" %></div>
+        <div class="col-md-4 pull-right"><%= link_to "Devamını Oku" , info ,class: "btn btn-md btn-info" %></div>
       </div>
       <% end %>
     </div>
