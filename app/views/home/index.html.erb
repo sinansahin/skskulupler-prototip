@@ -1,97 +1,96 @@
 <%= render "header" %>
-          <div class="col-md-12">
-            <div class="box box-solid">
-              <div class="box-body">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                  </ol>
-                  <div class="carousel-inner">
-                    <div class="item active">
-                      <%= image_tag("slide1.jpg") %>
-                    </div>
-                    <div class="item">
-                      <%= image_tag("slide2.jpg") %>
-                      
-                    </div>
-                  </div>
-                  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                    <span class="fa fa-angle-left"></span>
-                  </a>
-                  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                    <span class="fa fa-angle-right"></span>
-                  </a>
-                </div>
-              </div><!-- /.box-body -->
-           </div><!-- /.box -->
-         </div>
-  
-<div class="row">
-      <div class="col-md-3">
-				<div class="well"> 
-              	<ul class="nav nav-stacked" id="sidebar">
-              	<div class="list-group">
-      				  <% @Club.each do |club| %>
-      				  <div class="list-group-item">	
-      					   <div class="row">
-                   <div class="col-md-5"><%= image_tag club.avatar.url ,class:"profile-club-img img-responsive img-circle" %></div>
-                  <div class="col-md-7 nav-text"><%= link_to club.name , club%></div>
-                </div>
+<div class="col-md-12">
+  <div class="box box-solid">
+    <div class="box-body">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag("slide1.jpg") %>
+          </div>
+          <div class="item">
+            <%= image_tag("slide2.jpg") %>
 
-                   
-      				  </div>
-      				  <% end %>
-      				</div>
-              </ul>
-  				</div>
-      </div>
-      <div class="col-md-5">
-        <div class="well"> 
-                    <div class="list-group">
-                    <h2>Duyurular</h2>
-                        <% @Notice.each do |notice| %>
-                          <div class= "list-group-item">
-                            <%= image_tag notice.avatar.url, class: "home-image-content"%>
-                            <%= link_to notice.title, notice ,class: "TextType" %>
-                            
-                            </div>
-                          <% end %>
-                    </div>
+          </div>
         </div>
-        
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="fa fa-angle-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="fa fa-angle-right"></span>
+        </a>
       </div>
-      	
-            <div class="col-md-4">
-              <!-- Custom Tabs (Pulled to the right) -->
-              <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs pull-right">
-                  <li class="active"><a href="#tab_1-1" data-toggle="tab" aria-expanded="true">Etkinlikler</a></li>
-                  <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Haberler</a></li>
-                  <li class="pull-left header"><i class="fa fa-th"></i>  </li>
-                </ul>
-                <div class="tab-content">
-                  <div class="tab-pane active" id="tab_1-1">
-                    <% @Activities.each do |activity| %>
-          						<div class="list-group-item">
-          						<%= link_to activity.title, activity %>
-          				        <span style="float:right;"><%= activity.start_date.to_s%></span>
-          						</div>
-          						<% end%>
-                  </div><!-- /.tab-pane -->
-                  <div class="tab-pane" id="tab_2-2">
-                    <div class="list-group-item">
-          						  <% @infos.each do |info| %>
-                            <%= image_tag info.avatar.url,class:"home-image-content" %>
-                            <%= link_to info.title, info, class:"home-info-content" %>
-                            </div>
+    </div><!-- /.box-body -->
+  </div><!-- /.box -->
+</div>
 
-          					        
-          					      <% end %>
-          						</div>
-               
+<div class="row">
+  <div class="col-md-3">
+    <div class="well"> 
+     <ul class="nav nav-stacked" id="sidebar">
+       <div class="list-group">
+        <% @Club.each do |club| %>
+        <div class="list-group-item">	
+          <div class="row">
+           <div class="col-md-5"><%= image_tag club.avatar.url ,class:"profile-club-img img-responsive img-circle" %></div>
+           <div class="col-md-7 nav-text"><%= link_to club.name , club%></div>
+         </div>
 
-                </div><!-- /.tab-content -->
-              </div><!-- nav-tabs-custom -->
-            </div><!-- /.col -->
-          
+
+       </div>
+       <% end %>
+     </div>
+   </ul>
+ </div>
+</div>
+<div class="">
+  <div class="well col-md-6"> 
+    <div class="list-group">
+      <h3 style="margin-top: -13px; text-align: center">Haberler</h3>
+      <% @infos.each do |info| %>
+      <div class= "list-group-item col-md-12">
+        <h1><%= link_to info.title, info ,class: "home-info-title col-md-12" %></h1>
+        <p class="glyphicon glyphicon-time col-md-12" style="margin-top: -18px"> Oluşturulma Zamanı: <%= info.created_at %></p>
+        <%= image_tag info.avatar.url, class: "home-info-image col-md-4"%>
+        <p class="col-md-8"><%= info.content[0..250] %></p>
+        <div class="btn btn-info col-md-4 pull-right"><%= link_to "Devamını Oku" , info ,class: "home-info-title" %></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-3">
+  <!-- Custom Tabs (Pulled to the right) -->
+  <div class="nav-tabs-custom">
+    <ul class="nav nav-tabs pull-right">
+      <li class="active"><a href="#tab_1-1" data-toggle="tab" aria-expanded="true">Etkinlikler</a></li>
+      <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Duyurular</a></li>
+      <li class="pull-left header"><i class="fa fa-th"></i>  </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab_1-1">
+        <% @Activities.each do |activity| %>
+        <div class="list-group-item">
+          <%= link_to activity.title, activity %>
+          <span style="float:right;"><%= activity.start_date.to_s%></span>
+        </div>
+        <% end%>
+      </div><!-- /.tab-pane -->
+
+      <div class="tab-pane" id="tab_2-2">
+        <div class="list-group-item">
+          <% @Notice.each do |notice| %>
+          <%= image_tag notice.avatar.url, class: "home-image-content" %>
+          <%= link_to notice.title, notice, class: "home-notice-content" %>
+          <% end %>
+        </div>
+      </div>
+    </div><!-- /.tab-content -->
+  </div><!-- nav-tabs-custom -->
+</div><!-- /.col -->
+

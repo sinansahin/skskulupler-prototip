@@ -102,13 +102,24 @@ background-position: top-left;
 	font-size: 18px;
 
 }
-.home-image-content{
-	border: 3px solid #3C8DBC;
-	border-radius: 8px;
-	width: 150px;
-	height: 50px;
+.home-info-image{
+	height: 110px;
+	padding: 0px;
+	margin: 0px;
 }
-.home-info-content{
+.home-info-title{
+	padding: 0px;
+	margin: 0px;
+	bottom: 15px;
+
+}
+
+.home-info-title :hover{
+	background-color: #3C8DBC !important;
+
+}
+
+.home-notice-content{
 
 	margin-left: 10px;
 }
