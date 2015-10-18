@@ -77,9 +77,14 @@
     <div class="tab-content">
       <div class="tab-pane active" id="tab_1-1">
         <% @Activities.each do |activity| %>
-        <div class="list-group-item">
-          <%= link_to activity.title, activity %>
-          <span style="float:right;"><%= activity.start_date.to_s%></span>
+        <div class="list-group-item " style="height:75px;">
+        <div class="row">
+          <div class="col-md-4"><%= image_tag activity.avatar.url, class:"home-image-content profile-club-img img-responsive img-circle" %>
+          </div>
+          <div class="col-md-8 nav-text" ><%= link_to activity.title, activity%>
+              <div style="float:right;font-size:8px;" ><%= activity.start_date.to_s%></div>
+          </div>
+        </div>  
         </div>
         <% end%>
       </div><!-- /.tab-pane -->
@@ -90,8 +95,8 @@
           <% @Notice.each do |notice| %>
           <div class="list-group-item">
           <div class="row">
-          <span class="col-md-5"><%= image_tag notice.avatar.url, class: "home-image-content profile-club-img img-responsive img-circle" %></span>
-          <span class="col-md-7" style=""><%= link_to notice.title, notice, class: "nav-text" %></span> 
+          <span class="col-md-5"><%= image_tag notice.avatar.url, class:"home-image-content profile-club-img img-responsive img-circle" %></span>
+          <span class="col-md-7 nav-text" style=""><%= link_to notice.title, notice, class: "nav-text" %></span> 
           </div>
           </div>
           
@@ -101,7 +106,7 @@
         </div>
         </div>
       </div>
-    </div><!-- /.tab-content -->
-  </div><!-- nav-tabs-custom -->
+    </div>
+  </div>
 </div><!-- /.col -->
 
