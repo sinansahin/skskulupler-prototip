@@ -47,6 +47,17 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def add_admin
+    @user = User.find(params[:id])
+    @user.roles << Role.find_by_name("Admin")
+    redirect_to admin_users_path(@user)
+  end
+  def delete_admin
+    @user = User.find(params[:id])
+    @user.roles.delete(Role.find_by_name("Admin")) 
+    redirect_to admin_users_path(@user)
+  end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

@@ -24,4 +24,9 @@
   <div class="actions">
     <%= f.submit "Ekle",class: 'btn btn-info' %>
   </div>
+  <%if user.admin?  %>
+            
+        <%else%>
+        <%= link_to "Admin yap", add_admin_admin_user_path(user), class: "btn btn-danger", data: {confirm: "Bu kişiyi admin olarak atayacakmisiniz?"}%>
+        <%end%>
 <% end %>

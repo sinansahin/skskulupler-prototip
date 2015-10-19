@@ -14,7 +14,10 @@ Rails.application.routes.draw do
       get :club_member, on: :member
       get :topluluktan_cikar, on: :member
     end
-    resources :users , except: [:show]
+    resources :users , except: [:show] do
+      get :add_admin, on: :member
+      get :delete_admin, on: :member
+    end
     resources :notices
     resources :club_roles
     resources :infos
